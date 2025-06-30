@@ -1,0 +1,19 @@
+Library Managment System:
+        Features:
+                Search Book
+                Add Book(Barcode no, Title,edition,author,category,publisher,Language,quantity);
+                List All Book
+-
+
+
+class:
+    Book:   
+        insert
+        getAll
+        search
+
+
+
+
+
+
