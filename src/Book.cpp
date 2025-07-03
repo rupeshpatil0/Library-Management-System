@@ -2,13 +2,13 @@
 
 #include "../includes/Book.hpp"
 
-Book::Book(std::string title, int quantity)
+Book::Book(const std::string &title, int quantity)
 {
     this->setTitle(title);
     this->setQuantity(quantity);
 }
 
-Book::Book(int barcode, std::string title, int edition, std::string author, std::string category, std::string publisher, std::string language, int quantity)
+Book::Book(int barcode,const std::string &title, int edition,const std::string &author,const std::string &category,const std::string &publisher,const std::string &language, int quantity)
 {
     this->setBarcodeNo(barcode);
     this->setTitle(title);
@@ -20,14 +20,14 @@ Book::Book(int barcode, std::string title, int edition, std::string author, std:
     this->setLanguage(language);
 }
 
-void Book::isValid(int value)
+void Book::isValid(int value) const
 {
     if (value < 0)
     {
         throw std::invalid_argument(std::to_string(value) + " is not valid");
     }
 }
-void Book::isValid(std::string value)
+void Book::isValid(const std::string &value) const
 {
     if (value == "")
     {
@@ -50,62 +50,62 @@ void Book::setEdition(int edition)
     isValid(edition);
     this->edition = edition;
 }
-void Book::setTitle(std::string title)
+void Book::setTitle(const std::string &title)
 {
     isValid(title);
     this->title = title;
 }
-void Book::setAuthor(std::string author)
+void Book::setAuthor(const std::string &author)
 {
     isValid(author);
     this->author = author;
 }
-void Book::setCategory(std::string category)
+void Book::setCategory(const std::string &category)
 {
     isValid(category);
     this->category = category;
 }
-void Book::setPublisher(std::string publisher)
+void Book::setPublisher(const std::string &publisher)
 {
     isValid(publisher);
     this->publisher = publisher;
 }
-void Book::setLanguage(std::string language)
+void Book::setLanguage(const std::string &language)
 {
     isValid(language);
     this->language = language;
 }
 
-int Book::getBarcodeNo()
+int Book::getBarcodeNo() const
 {
     return barcodeNo;
 }
-int Book::getQuantity()
+int Book::getQuantity() const
 {
     return quantity;
 }
-int Book::getEdition()
+int Book::getEdition() const
 {
     return edition;
 }
 
-std::string Book::getTitle()
+std::string Book::getTitle() const
 {
     return title;
 }
-std::string Book::getAuthor()
+std::string Book::getAuthor() const
 {
     return author;
 }
-std::string Book::getCategory()
+std::string Book::getCategory() const
 {
     return category;
 }
-std::string Book::getPublisher()
+std::string Book::getPublisher() const
 {
     return publisher;
 }
-std::string Book::getLanguage()
+std::string Book::getLanguage() const
 {
     return language;
 }
